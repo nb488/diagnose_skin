@@ -1,0 +1,102 @@
+
+* {
+    font-family: "Inria Serif", Serif; 
+}
+
+body {
+    background-color: #134074;
+    color: #EEF4ED;
+    text-align: left;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+
+.header {
+    padding: 80px;
+    text-align: center; /*centres the text */
+    background: #134074; /*blue background */
+    color: #EEF4ED; /* text colour, off-white */
+    font-size: 40px;
+}
+
+.abovesearchbar {
+    padding: 5px;
+    text-align: left; /*centres the text */
+    background: #134074; /*blue background */
+    color: #EEF4ED; /* text colour, off-white */
+    font-size: 30px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* style for the search bar */
+.searchbar input[type=text] {
+    padding: 15px;
+    font-size:30px;
+    border: 1px solid grey;
+    float: middle;
+    width: 80%;
+    background: white;
+    margin: auto;
+    
+     
+}
+/* styling the search button */
+.search button {
+  float: middle;
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none; /* stops double borders from happening */
+  cursor: pointer;
+}
+
+
+
+.searchbar button:hover {
+    background: #8DA9C4;
+}
+
+.searchbar::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* loading icon */
+.loader {
+    position:fixed;
+    left: 650px;
+    top: 300px;
+    border-top: 16px solid blue;
+    border-right: 16px solid purple;
+    border-bottom: 16px solid turquoise;
+    border-left: 16px solid rgb(127, 87, 248);
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .loadingheader {
+    padding: 50px;
+    text-align: center; /*centres the text */
+    background: #134074; /*blue background */
+    color: #EEF4ED; /* text colour, off-white */
+    font-size: 40px;
+}
+
