@@ -3,7 +3,7 @@ from flask import Flask, render_template, request, redirect, url_for, jsonify
 from joblib import load
 from PIL import Image
 
-model = load("/") #!!TODO 
+model = load("model.joblib")
 
 def requestResults(image):
 
@@ -11,8 +11,7 @@ def requestResults(image):
     
     prediction = model.predict(image)
     
-    str = "It works"
-    return str #TODO return prediction
+    return "It works" 
 
 
 app = Flask(__name__)
@@ -24,7 +23,7 @@ def home():
     return render_template("diagnose.html")
 
 
-@app.route("/upload", methods =["POST"])
+@app.route("https://localhost:5000/upload", methods =["POST"])
 def upload_file():
     if 'file' not in request.files:
         return jsonify({"error": "No file part"}), 400
