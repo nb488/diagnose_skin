@@ -4,7 +4,7 @@ from PIL import Image
 import os
 
 # Load the model
-# model = load("model.joblib") TODO
+model = load("model.joblib") TODO
 
 def requestResults(image):
     # TODO: preprocess image
