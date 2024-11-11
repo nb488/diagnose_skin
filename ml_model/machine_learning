@@ -9,6 +9,7 @@ from sklearn.model_selection import (
     train_test_split,
 )
 
+from flask import Flask, render_template
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.pipeline import make_pipeline
 from sklearn.compose import make_column_transformer
@@ -143,19 +144,4 @@ pipe_monster = make_pipeline(
 )
 
 results["monster"] = cross_validate(pipe_knn, train_X, train_y, cv=5, return_train_score= True, scoring="recall_macro")
-
-
-
-
-param_grid = {
-    "C": [0.001, 0.01, 0.1, 1, 10, 100],
-    "gamma": [0.001, 0.01, 0.1, 1, 10, 100],
-}
-
-results_dict = {"C": [], "gamma": [], "mean_cv_score": []}
-best_score = 0
-
-
-new_example = ["I have a rash on my arm, it is red and itchy"]
-pipe_scv.fit(train_X, train_y)
-pipe_scv.predict(new_example)
+###############################################  
