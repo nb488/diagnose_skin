@@ -33,8 +33,7 @@ def upload_file():
     # result = requestResults(img)  # Get the result TODO
 
     # Redirect to the results page with the result as a query parameter
-    # return redirect(url_for("results", result=result)) TODO\
-    print("????")
+    return redirect(url_for("results", result=result))
 
 @app.route('/picversion.html')
 def results():
