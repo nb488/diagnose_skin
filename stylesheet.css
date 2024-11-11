@@ -6,7 +6,7 @@
 body {
     background-color: #134074;
     color: #EEF4ED;
-    text-align: left;
+    text-align: center;
     margin-left: 40px;
     margin-right: 40px;
     margin-top: 10px;
@@ -23,48 +23,24 @@ body {
     font-size: 40px;
 }
 
-.abovesearchbar {
-    padding: 5px;
-    text-align: left; /*centres the text */
-    background: #134074; /*blue background */
-    color: #EEF4ED; /* text colour, off-white */
-    font-size: 30px;
-}
 
 * {
     box-sizing: border-box;
 }
 
 /* style for the search bar */
-.searchbar input[type=text] {
-    padding: 15px;
-    font-size:30px;
-    border: 1px solid grey;
+.searchbar input[type="text"] {
+    width: 900px;
+    height: 60px; 
+    display: flex;
+    padding: 5px;
+    font-size:50px;
     float: middle;
-    width: 80%;
-    background: white;
     margin: auto;
-    
      
 }
-/* styling the search button */
-.search button {
-  float: middle;
-  width: 20%;
-  padding: 10px;
-  background: #2196F3;
-  color: white;
-  font-size: 17px;
-  border: 1px solid grey;
-  border-left: none; /* stops double borders from happening */
-  cursor: pointer;
-}
 
 
-
-.searchbar button:hover {
-    background: #8DA9C4;
-}
 
 .searchbar::after {
     content: "";
@@ -74,6 +50,7 @@ body {
 
 /* loading icon */
 .loader {
+    display: none;
     position:fixed;
     left: 650px;
     top: 300px;
@@ -92,11 +69,27 @@ body {
     100% { transform: rotate(360deg); }
   }
 
-  .loadingheader {
+  .loader {
     padding: 50px;
     text-align: center; /*centres the text */
     background: #134074; /*blue background */
     color: #EEF4ED; /* text colour, off-white */
     font-size: 40px;
+}
+
+.container {
+    background-color: #134074;
+    color: #EEF4ED;
+    text-align: center;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 30px;
+
+}
+
+.loadingheader {
+    display: none;
 }
 
