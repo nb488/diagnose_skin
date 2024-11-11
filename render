@@ -34,14 +34,14 @@ def upload_file():
 
     # Get prediction result
     result = requestResults(img)  # Get the result TODO
-
+    print(result)
     # Redirect to the results page with the result as a query parameter
-    return redirect(url_for("results", result=result))
+    return redirect(url_for(".results", result=result))
 
-@app.route('/picversion.html')
-def results():
+@app.route('/picversion')
+def results(result):
     # Get the result from the URL query parameter
-    result = request.args.get('result')
+    # result = request.args.get('result')
 
     # Render the results page with the result variable
     return render_template('picversion.html', result=result)
