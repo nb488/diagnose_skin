@@ -4,18 +4,17 @@ from PIL import Image
 from sklearn.decomposition import PCA, IncrementalPCA
 import tensorflow as tf
 
-def get_prediction(image) -> str:
-    img_arr = process(image)
+def get_prediction(arr) -> str:
+    img_arr = process(arr)
     return predict(img_arr)
 
-def process(image):
-    img = Image.open(image).resize((100,100))
-    arr = np.array(img.getdata())
+def process(arr):
+
     new = np.zeros(len(arr))
     # converting rgb to array to singular normalised value
     new = ((arr[:,0] << 16) + (arr[:,1] << 8) + arr[:,2]) / 0xffffff
     # conversion to matrix form
-    mat = new.reshape(img.size[0], img.size[1])
+    mat = new.reshape(100, 100)
 
 
     # # using PCA to project data to lower dim
@@ -28,10 +27,10 @@ def process(image):
     return flat
 
 def predict(arr):
-    m = tf.keras.models.load_model("model.keras")
-    pred = m.predict(arr[None])
+    m = tf.keras.models.load_model("ml_model/model.keras")
+    pred = m.predict(arr[None])[0,0]
     if (pred > 0.5):
-        return "Benign"
+        return f"Benign {round(pred*100, 2)}% confidence"
     else:
-        return "Malignant"
+        return f"Malignant {round(pred*100, 2)}% confidence"
 

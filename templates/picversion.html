@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload PNG Image</title>
+</head>
+<body>
+    <style>
+        * {
+    font-family: "Inria Serif", Serif; 
+}
+
+body {
+    background-color: #134074;
+    color: #EEF4ED;
+    text-align: center;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+
+.header {
+    padding: 80px;
+    text-align: center; /*centres the text */
+    background: #134074; /*blue background */
+    color: #EEF4ED; /* text colour, off-white */
+    font-size: 40px;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+/* style for the search bar */
+.searchbar input[type="text"] {
+    width: 900px;
+    height: 60px; 
+    display: flex;
+    padding: 5px;
+    font-size:50px;
+    float: middle;
+    margin: auto;
+     
+}
+
+
+
+.searchbar::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* loading icon */
+.loader {
+    display: none;
+    position:fixed;
+    left: 650px;
+    top: 300px;
+    border-top: 16px solid blue;
+    border-right: 16px solid purple;
+    border-bottom: 16px solid turquoise;
+    border-left: 16px solid rgb(127, 87, 248);
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .loader {
+    padding: 50px;
+    text-align: center; /*centres the text */
+    background: #134074; /*blue background */
+    color: #EEF4ED; /* text colour, off-white */
+    font-size: 40px;
+}
+
+.container {
+    background-color: #134074;
+    color: #EEF4ED;
+    text-align: center;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 30px;
+
+}
+
+.loadingheader {
+    display: none;
+}
+
+
+    </style>
+    <h1>{{result}}</h1>
+    <form action="http://localhost:5000/upload" method="POST" enctype="multipart/form-data">
+        <label for="file">Select a PNG image:</label>
+        <input type="file" id="file" name="file" accept=".png" required>
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html>
