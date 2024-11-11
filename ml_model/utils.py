@@ -32,5 +32,5 @@ def predict(arr):
     if (pred > 0.5):
         return f"Benign {round(pred*100, 2)}% confidence"
     else:
-        return f"Malignant {round(pred*100, 2)}% confidence"
+        return f"Malignant {round((1-pred)*100, 2)}% confidence"
 
