@@ -5,9 +5,6 @@
     <title>Online Diagnosis</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--load the icons-->
-<link rel="icons"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="stylesheet.css" />
 
 
@@ -17,24 +14,23 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome
     <h1>Welcome to the Online Diagnosis!</h1>
     <!-- put body content here-->
     </div>
-    <div class="abovesearchbar">
-    <p>Describe your condition</p>
-    </div>
 
-    <div class="searchbar">
-        <input type="text" placeholder="My Symptoms include..."
-         name="search">
-    </div>
-    <div class="searchbutton">
-    <input type="submit" name="search" value="Search"
- onclick="location.href='loading.html'">
-   </div>
+    <h1>Upload a PNG Image of the Skin that requires Diagnosis</h1>
+    <form action="http://localhost:5000/upload" method="POST" enctype="multipart/form-data">
+        <label for="file">Select a PNG image:</label>
+        <input type="file" id="file" name="file" accept=".png" required>
+        <button type="submit">Upload</button>
+    </form>
 
-   <div>
-    <img
-      src="hackcamp/doctors.jpeg"
-      alt="Doctors Image"
-    />
+
+   <div class="loadingheader">
+    <h1>Searching Results...</h1>
+    <!-- put body content here-->
+</div>
+<div class="loader"></div>
     <div>
+
+
+      
 </body>
 </html>
