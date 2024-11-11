@@ -4,12 +4,14 @@ from PIL import Image
 import os
 
 # Load the model
-# model = load("model.joblib") TODO
+model = load("ml_model/model.keras")
 
 def requestResults(image):
     # TODO: preprocess image
+
+
     prediction = model.predict(image)
-    return "It works"  # Placeholder for the actual prediction
+    return prediction  # Placeholder for the actual prediction
 
 app = Flask(__name__)
 
@@ -30,7 +32,7 @@ def upload_file():
     img = Image.open(file)
 
     # Get prediction result
-    # result = requestResults(img)  # Get the result TODO
+    result = requestResults(img)  # Get the result TODO
 
     # Redirect to the results page with the result as a query parameter
     return redirect(url_for("results", result=result))
